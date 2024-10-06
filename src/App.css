@@ -5,7 +5,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; */
-  background-color: #B7E0FF;
+  background-color: #6A9AB0;
 }
 body {
   margin: 0;
@@ -47,26 +47,26 @@ body {
   width: 100%;
   height: 20px;
   margin: 10px 0; /* Add vertical margin between boxes */
-  background-color: #E78F81; /* Default to green for unrevealed clues */
+  background-color: #3A6D8C; /* Default to green for unrevealed clues */
   display: flex;
   justify-content: center;
   align-items: center;
   /* font-size: 1.2em; */
   font-weight: bold;
   transition: background-color 0.3s ease;
-  padding: 15px 5px;
+  padding: 15px 2px;
 }
 
 .clue-box.revealed {
-  background-color: #FFCFB3; /* Turn white for revealed clues */
+  background-color: #001F3F; /* Turn white for revealed clues */
   color: #white; /* Keep the text visible on white */
 }
 
 .answer-box {
   width: 40%;
   height: 20px; /* Ensure it matches the height of the clue section */
-  margin-left: 20px;
-  background-color: #FFF5CD;
+  margin-left: 30px;
+  background-color: #3A6D8C;
   color: white;
   display: flex;
   justify-content: center;
@@ -78,36 +78,97 @@ body {
 }
 
 .answer-box.revealed {
-  background-color: #de4e2c; /* Revealed answer box */
-  color: black;
+  background-color: #001F3F; /* Revealed answer box */
+  color: white;
 }
 
-input {
-  padding: 10px;
+/* input {
+  padding: 15px 5px;
   border-radius: 8px;
-  border: 2px solid black;
+  border: 1px solid #384B70;
   margin-right: 10px;
-  background-color: #91b0cd;
+  background-color: #384B70;
   width: 20%;
   height: 20px;
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2);
+} */
+
+input {
+  padding: 10px 15px; /* Adjust padding for better aesthetics */
+  border-radius: 8px;
+  border: 2px solid #384B70; /* Slightly darker border for contrast */
+  margin-right: 10px;
+  background-color: #6A9AB0; /* Match the background color of the main container */
+  width: 20%;
+  height: 40px; /* Increase height for better usability */
+  color: white; /* Ensure text is white for better visibility */
+  font-size: 1em; /* Adjust font size for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
+
+input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #de4e2c; 
+  background-color: #4a6e82; /* Darken background on focus */
+  box-shadow: 0 0 10px rgba(222, 78, 44, 0.5); /* Add glow effect on focus */
+}
+
+input::placeholder {
+  color: #d9d9d9; /* Placeholder color */
+  opacity: 0.8; /* Slightly transparent for better visual blend */
+}
+
 
 button {
-  padding: 10px 15px;
-  background-color: #de4e2c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+  padding: 12px 20px; /* Increase padding for better aesthetics */
+  background-color: #EAD8B1; /* Soft background color */
+  color: black; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 10px; /* Margin above the button */
+  font-size: 1em; /* Font size for readability */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 40%;
+  align-items: center;
+  text-align: center;
 }
 
+/* Hover effects */
 button:hover {
-  background-color: #d14227;
+  background-color: #d8c8a1; /* Darken background on hover */
+  transform: translateY(-2px); /* Slightly lift the button on hover */
 }
+
+/* Active state effect */
+button:active {
+  transform: translateY(1px); /* Press down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
+}
+
 
 p {
   margin-top: 1em;
   font-size: 1.2em;
 }
 
+
+
+.logo {
+  position: absolute; /* Position the logo absolutely */
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  width: 200px; 
+  height: auto; 
+}
+
+.countryToggle {
+  position: relative;
+  width: 15%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
