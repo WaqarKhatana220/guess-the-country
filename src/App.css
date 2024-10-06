@@ -1,11 +1,11 @@
 /* App.css */
 html {
-  border: 2px solid yellow;
-  background-image: url('/public/bg12.svg'); /* Use the correct path */
+  /* background-image: url('/public/bg12.svg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100vh; */
+  background-color: #B7E0FF;
 }
 body {
   margin: 0;
@@ -14,6 +14,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
 }
+
 
 .container {
   text-align: center;
@@ -33,7 +34,6 @@ body {
   align-items: center;
   margin-bottom: 20px;
   width: 50%;
-  border: 2px solid red;
 }
 
 .clues {
@@ -47,7 +47,7 @@ body {
   width: 100%;
   height: 20px;
   margin: 10px 0; /* Add vertical margin between boxes */
-  background-color: #153449; /* Default to green for unrevealed clues */
+  background-color: #E78F81; /* Default to green for unrevealed clues */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,15 +58,15 @@ body {
 }
 
 .clue-box.revealed {
-  background-color: #de4e2c; /* Turn white for revealed clues */
-  color: white; /* Keep the text visible on white */
+  background-color: #FFCFB3; /* Turn white for revealed clues */
+  color: #white; /* Keep the text visible on white */
 }
 
 .answer-box {
   width: 40%;
   height: 20px; /* Ensure it matches the height of the clue section */
   margin-left: 20px;
-  background-color: #153449;
+  background-color: #FFF5CD;
   color: white;
   display: flex;
   justify-content: center;
