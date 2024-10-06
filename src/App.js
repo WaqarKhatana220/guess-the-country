@@ -37,13 +37,15 @@ function App() {
 
   return (
     <div className='container'>
-      {/* <h1>Guess the Country</h1> */}
       <div className='clues'>
-        <ul>
-          {revealedClues.map((clueIndex) => (
-            <li key={clueIndex}>{countries[currentCountry].clues[clueIndex]}</li>
-          ))}
-        </ul>
+        {Array(5).fill(0).map((_, index) => (
+          <div
+            key={index}
+            className={`clue-box ${revealedClues.includes(index) ? 'revealed' : ''}`}
+          >
+            {revealedClues.includes(index) && countries[currentCountry].clues[index]}
+          </div>
+        ))}
       </div>
 
       <p>{message}</p>
@@ -55,7 +57,7 @@ function App() {
         placeholder="Enter your guess"
       />
       <button onClick={handleGuess}>Submit Guess</button>
-
+      <button onClick={nextCountry}>Next Country</button>
     </div>
   );
 }

@@ -15,27 +15,45 @@ body {
   color: white;
 }
 
-.App {
+.container {
   text-align: center;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat; /* Prevent the image from repeating */
-  color: white; /* Text color, depending on your image */
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.clues {
+  display: flex;
+  flex-direction: column; /* Stack boxes vertically */
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 2px solid blue;
+  width: 60%;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 1em;
+.clue-box {
+  width: 50%;
+  height: 20px;
+  margin: 10px 0; /* Add vertical margin between boxes */
+  background-color: #4caf50; /* Default to green for unrevealed clues */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  padding: 15px 5px;
+}
+
+.clue-box.revealed {
+  background-color: white; /* Turn white for revealed clues */
+  color: black; /* Keep the text visible on white */
 }
 
 input {
@@ -47,15 +65,16 @@ input {
 
 button {
   padding: 10px 15px;
-  background-color: #4caf50;
+  background-color: #de4e2c;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #d14227;
 }
 
 p {
