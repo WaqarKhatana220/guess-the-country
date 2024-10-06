@@ -16,9 +16,8 @@ function App() {
         if (tries < 4) {
           setRevealedClues([...revealedClues, revealedClues.length]);
           setTries(tries + 1);
-          setMessage('Wrong! Try again.');
         } else {
-          setMessage(`Sorry! The correct answer was ${countries[currentCountry].name}.`);
+          setMessage(countries[currentCountry].name);
         }
     }
     setUserGuess(''); 
@@ -37,15 +36,17 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Guess the Country</h1>
-      <div>
+    <div className='container'>
+      {/* <h1>Guess the Country</h1> */}
+      <div className='clues'>
         <ul>
           {revealedClues.map((clueIndex) => (
             <li key={clueIndex}>{countries[currentCountry].clues[clueIndex]}</li>
           ))}
         </ul>
       </div>
+
+      <p>{message}</p>
 
       <input
         type="text"
@@ -55,7 +56,6 @@ function App() {
       />
       <button onClick={handleGuess}>Submit Guess</button>
 
-      <p>{message}</p>
     </div>
   );
 }

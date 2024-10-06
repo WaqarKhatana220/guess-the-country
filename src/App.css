@@ -1,7 +1,7 @@
 /* App.css */
 html {
   border: 2px solid yellow;
-  background-image: url('/public/bg11.svg'); /* Use the correct path */
+  background-image: url('/public/bg12.svg'); /* Use the correct path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@ body {
   padding: 0;
   
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: black;
+  color: white;
 }
 
 .App {
@@ -62,3 +62,4 @@ p {
   margin-top: 1em;
   font-size: 1.2em;
 }
+
