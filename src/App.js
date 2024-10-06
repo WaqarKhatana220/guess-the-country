@@ -38,6 +38,12 @@ function App() {
     setAnswerRevealed(false); // Reset answer reveal for the next country
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleGuess();
+    }
+  };
+
   return (
     <div className='container'>
       <div className='clues-container'>
@@ -60,9 +66,8 @@ function App() {
         type="text"
         value={userGuess}
         onChange={(e) => setUserGuess(e.target.value)}
-        placeholder="Enter your guess"
+        onKeyDown={handleKeyPress}
       />
-      <button onClick={handleGuess}>Submit Guess</button>
       <button onClick={nextCountry}>Next Country</button>
     </div>
   );

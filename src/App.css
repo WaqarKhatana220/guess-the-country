@@ -32,14 +32,15 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  width: 40%;
+  width: 50%;
+  border: 2px solid red;
 }
 
 .clues {
   display: flex;
   flex-direction: column; /* Stack boxes vertically */
   justify-content: center;
-  width: 50%; /* Give the clues section half the container width */
+  width: 40%; /* Give the clues section half the container width */
 }
 
 .clue-box {
@@ -50,8 +51,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   font-weight: bold;
   transition: background-color 0.3s ease;
   padding: 15px 5px;
@@ -59,11 +59,11 @@ body {
 
 .clue-box.revealed {
   background-color: #de4e2c; /* Turn white for revealed clues */
-  color: black; /* Keep the text visible on white */
+  color: white; /* Keep the text visible on white */
 }
 
 .answer-box {
-  width: 50%;
+  width: 40%;
   height: 20px; /* Ensure it matches the height of the clue section */
   margin-left: 20px;
   background-color: #153449;
@@ -84,9 +84,12 @@ body {
 
 input {
   padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #ccc;
+  border-radius: 8px;
+  border: 2px solid black;
   margin-right: 10px;
+  background-color: #91b0cd;
+  width: 20%;
+  height: 20px;
 }
 
 button {
