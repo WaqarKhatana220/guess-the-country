@@ -56,8 +56,6 @@ function App() {
         </div>
       </div>
 
-      <p>{message}</p>
-
       <input
         type="text"
         value={userGuess}

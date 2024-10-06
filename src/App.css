@@ -32,8 +32,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  width: 60%;
-  border: 2px solid blue;
+  width: 40%;
 }
 
 .clues {
@@ -47,7 +46,7 @@ body {
   width: 100%;
   height: 20px;
   margin: 10px 0; /* Add vertical margin between boxes */
-  background-color: #4caf50; /* Default to green for unrevealed clues */
+  background-color: #153449; /* Default to green for unrevealed clues */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +58,7 @@ body {
 }
 
 .clue-box.revealed {
-  background-color: white; /* Turn white for revealed clues */
+  background-color: #de4e2c; /* Turn white for revealed clues */
   color: black; /* Keep the text visible on white */
 }
 
@@ -67,7 +66,7 @@ body {
   width: 50%;
   height: 20px; /* Ensure it matches the height of the clue section */
   margin-left: 20px;
-  background-color: #de4e2c;
+  background-color: #153449;
   color: white;
   display: flex;
   justify-content: center;
@@ -79,7 +78,7 @@ body {
 }
 
 .answer-box.revealed {
-  background-color: white; /* Revealed answer box */
+  background-color: #de4e2c; /* Revealed answer box */
   color: black;
 }
 
