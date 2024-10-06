@@ -27,17 +27,24 @@ body {
   background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
+.clues-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 60%;
+  border: 2px solid blue;
+}
+
 .clues {
   display: flex;
   flex-direction: column; /* Stack boxes vertically */
   justify-content: center;
-  margin-bottom: 20px;
-  border: 2px solid blue;
-  width: 60%;
+  width: 50%; /* Give the clues section half the container width */
 }
 
 .clue-box {
-  width: 50%;
+  width: 100%;
   height: 20px;
   margin: 10px 0; /* Add vertical margin between boxes */
   background-color: #4caf50; /* Default to green for unrevealed clues */
@@ -54,6 +61,26 @@ body {
 .clue-box.revealed {
   background-color: white; /* Turn white for revealed clues */
   color: black; /* Keep the text visible on white */
+}
+
+.answer-box {
+  width: 50%;
+  height: 20px; /* Ensure it matches the height of the clue section */
+  margin-left: 20px;
+  background-color: #de4e2c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 15px 5px;
+  transition: background-color 0.3s ease;
+}
+
+.answer-box.revealed {
+  background-color: white; /* Revealed answer box */
+  color: black;
 }
 
 input {
