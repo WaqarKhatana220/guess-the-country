@@ -12,6 +12,7 @@ function App() {
   const [tries, setTries] = useState(0);
   const [correctGuesses, setCorrectGuesses] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [totalGuesses, setTotalGuesses] = useState(0);
   const [answerRevealed, setAnswerRevealed] = useState(false);
   const [shuffledCountries, setShuffledCountries] = useState([]);
 
@@ -35,7 +36,8 @@ function App() {
     if (userGuess.toLowerCase() === shuffledCountries[currentCountry].name.toLowerCase()) {
       setCorrectGuesses(correctGuesses + 1);
       setStreak(streak + 1);
-      setAnswerRevealed(true); // Reveal the answer when correct
+      setTotalGuesses(totalGuesses + 1);
+      setAnswerRevealed(true);
     } else {
       if (tries < 4) {
         setRevealedClues([...revealedClues, revealedClues.length]);
@@ -43,6 +45,7 @@ function App() {
       } else {
         setAnswerRevealed(true);
         setStreak(0);
+        setTotalGuesses(totalGuesses + 1);
       }
     }
     setUserGuess('');
@@ -52,13 +55,6 @@ function App() {
     if (currentCountry < shuffledCountries.length - 1) {
       setCurrentCountry(currentCountry + 1);
       resetCountryState(); // Reset clues and answer reveal
-    }
-  };
-
-  const previousCountry = () => {
-    if (currentCountry > 0) {
-      setCurrentCountry(currentCountry - 1);
-      resetCountryState();
     }
   };
 
@@ -94,7 +90,7 @@ function App() {
       </div>
 
       <div className='score'>
-        <p>Correct Guesses: {correctGuesses}</p>
+        <p>Guess Accuracy: {correctGuesses}/{totalGuesses}</p>
         <p>Current Streak: {streak}</p>
       </div>
 
