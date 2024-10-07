@@ -1,31 +1,29 @@
 /* App.css */
 html {
-  /* background-image: url('/public/bg12.svg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; */
   background-color: #6A9AB0;
+  height: 100vh;
 }
+
 body {
   margin: 0;
   padding: 0;
-  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
+  height: 100vh;
 }
 
 
+
+
 .container {
+  position: relative; /* Ensure container is positioned relative for absolute children */
   text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+  z-index: 1; /* Make sure content is above the map */
 }
 
 .clues-container {
@@ -51,16 +49,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 1.2em; */
   font-weight: bold;
   transition: background-color 0.3s ease;
   padding: 15px 2px;
 }
 
 .clue-box.revealed {
-  background-color: #001F3F; /* Turn white for revealed clues */
-  color: #white; /* Keep the text visible on white */
+  background-color: #001F3F; /* Turn dark for revealed clues */
+  color: white; /* Ensure text remains visible */
 }
+
+
 
 .answer-box {
   width: 40%;
@@ -81,17 +80,6 @@ body {
   background-color: #001F3F; /* Revealed answer box */
   color: white;
 }
-
-/* input {
-  padding: 15px 5px;
-  border-radius: 8px;
-  border: 1px solid #384B70;
-  margin-right: 10px;
-  background-color: #384B70;
-  width: 20%;
-  height: 20px;
-  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2);
-} */
 
 input {
   padding: 10px 15px; /* Adjust padding for better aesthetics */
@@ -119,7 +107,6 @@ input::placeholder {
   opacity: 0.8; /* Slightly transparent for better visual blend */
 }
 
-
 button {
   padding: 12px 30px; /* Increase padding for better aesthetics */
   background-color: #EAD8B1; /* Soft background color */
@@ -131,7 +118,6 @@ button {
   font-size: 1em; /* Font size for readability */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  /* width: 40%; */
   align-items: center;
   text-align: center;
 }
@@ -154,14 +140,12 @@ button:disabled {
   opacity: 0.7;
 }
 
-
 p {
-  margin-top: 1em;
   font-size: 1.2em;
   font-weight: bold;
+  margin: 0px;
+  padding: 5px;
 }
-
-
 
 .logo {
   position: absolute; /* Position the logo absolutely */
@@ -178,4 +162,11 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.score {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
