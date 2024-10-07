@@ -172,7 +172,7 @@ p {
 }
 
 .score {
-  text-align: right;
+  text-align: left;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
