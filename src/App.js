@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import countries from './countries';
-import Modal from './Modal'; // Import the Modal component
 import logo from './logo.png';
 
 function App() {
@@ -9,26 +8,19 @@ function App() {
   const [userGuess, setUserGuess] = useState('');
   const [revealedClues, setRevealedClues] = useState([0]);
   const [tries, setTries] = useState(0);
-  const [message, setMessage] = useState('');
+  const [correctGuesses, setCorrectGuesses] = useState(0);
   const [answerRevealed, setAnswerRevealed] = useState(false);
-  const [modalVisible, setModalVisible] = useState(false); // State for modal visibility
 
   const handleGuess = () => {
-    // if (userGuess.length === 0) {
-    //   return;
-    // }
     if (userGuess.toLowerCase() === countries[currentCountry].name.toLowerCase()) {
-      setMessage('Correct');
+      setCorrectGuesses(correctGuesses + 1);
       setAnswerRevealed(true); // Reveal the answer when correct
-      setModalVisible(true); // Show the modal
     } else {
       if (tries < 4) {
         setRevealedClues([...revealedClues, revealedClues.length]);
         setTries(tries + 1);
       } else {
-        setMessage(countries[currentCountry].name);
         setAnswerRevealed(true); // Reveal the answer when tries are over
-        setModalVisible(true); // Show the modal
       }
     }
     setUserGuess('');
@@ -37,14 +29,21 @@ function App() {
   const nextCountry = () => {
     if (currentCountry < countries.length - 1) {
       setCurrentCountry(currentCountry + 1);
-    } else {
-      setCurrentCountry(0);
-    }
+      resetCountryState(); // Reset clues and answer reveal
+    } 
+  };
+
+  const previousCountry = () => {
+    if (currentCountry > 0) {
+      setCurrentCountry(currentCountry - 1);
+    } 
+    resetCountryState();
+  };
+
+  const resetCountryState = () => {
     setRevealedClues([0]);
     setTries(0);
-    setMessage('');
-    setAnswerRevealed(false); // Reset answer reveal for the next country
-    setModalVisible(false); // Hide the modal
+    setAnswerRevealed(false); // Reset answer reveal for the next/previous country
   };
 
   const handleKeyPress = (e) => {
@@ -72,6 +71,8 @@ function App() {
         </div>
       </div>
 
+      <p>Correct Guesses: {correctGuesses}</p>
+
       <input
         type="text"
         value={userGuess}
@@ -81,11 +82,9 @@ function App() {
       />
 
       <div className='countryToggle'>
-      <button onClick={nextCountry}>Previous</button>
-      <button onClick={nextCountry}>Next</button>
+        <button onClick={previousCountry}>Previous</button>
+        <button onClick={nextCountry}>Next</button>
       </div>
-
-     
       
     </div>
   );
