@@ -103,13 +103,13 @@ function App() {
         value={userGuess}
         onChange={(e) => setUserGuess(e.target.value)}
         onKeyDown={handleKeyPress}
-        placeholder='...'
+        placeholder='. . .'
       />
 
       <button onClick={nextCountry} disabled={!(answerRevealed && currentCountry < shuffledCountries.length - 1)}>Next</button>
 
       {/* Leaflet Map as Background */}
-      <MapContainer center={[25, 25]} zoom={3} className='leaflet-container' style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+      <MapContainer center={[30.3753, 69.3451]} zoom={3} className='leaflet-container' style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
         {/* <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

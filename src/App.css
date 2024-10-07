@@ -2,6 +2,7 @@
 html {
   background-color: #6A9AB0;
   height: 100vh;
+  background-color: green;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
   height: 100vh;
+  background-color: green;
 }
 
 
@@ -45,7 +47,7 @@ body {
   width: 100%;
   height: 20px;
   margin: 10px 0; /* Add vertical margin between boxes */
-  background-color: #3A6D8C; /* Default to green for unrevealed clues */
+  background-color: #8FAAAE; /* Default to green for unrevealed clues */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +57,7 @@ body {
 }
 
 .clue-box.revealed {
-  background-color: #001F3F; /* Turn dark for revealed clues */
+  background-color: #2D515C; /* Turn dark for revealed clues */
   color: white; /* Ensure text remains visible */
 }
 
@@ -65,7 +67,7 @@ body {
   width: 40%;
   height: 20px; /* Ensure it matches the height of the clue section */
   margin-left: 30px;
-  background-color: #3A6D8C;
+  background-color: #557A6E;
   color: white;
   display: flex;
   justify-content: center;
@@ -76,20 +78,17 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.answer-box.revealed {
-  background-color: #001F3F; /* Revealed answer box */
-  color: white;
-}
+
 
 input {
   padding: 10px 15px; /* Adjust padding for better aesthetics */
   border-radius: 8px;
   border: 2px solid #384B70; /* Slightly darker border for contrast */
   margin-right: 10px;
-  background-color: #6A9AB0; /* Match the background color of the main container */
+  background-color: #E9EFEC; /* Match the background color of the main container */
   width: 20%;
   height: 40px; /* Increase height for better usability */
-  color: white; /* Ensure text is white for better visibility */
+  color: #112A46; /* Ensure text is white for better visibility */
   font-size: 1em; /* Adjust font size for readability */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
@@ -97,8 +96,8 @@ input {
 
 input:focus {
   outline: none; /* Remove default outline */
-  border-color: #de4e2c; 
-  background-color: #4a6e82; /* Darken background on focus */
+  border-color: #384B70; 
+  background-color: #E9EFEC; /* Darken background on focus */
   box-shadow: 0 0 10px rgba(222, 78, 44, 0.5); /* Add glow effect on focus */
 }
 
@@ -109,7 +108,7 @@ input::placeholder {
 
 button {
   padding: 12px 30px; /* Increase padding for better aesthetics */
-  background-color: #EAD8B1; /* Soft background color */
+  background-color: #E2C290; /* Soft background color */
   color: black; /* Text color */
   border: none; /* Remove border */
   border-radius: 5px; /* Rounded corners */
@@ -124,7 +123,7 @@ button {
 
 /* Hover effects */
 button:hover {
-  background-color: #d8c8a1; /* Darken background on hover */
+  background-color: #d1b487; /* Darken background on hover */
   transform: translateY(-2px); /* Slightly lift the button on hover */
 }
 
@@ -135,7 +134,7 @@ button:active {
 }
 
 button:disabled {
-  background-color: #EAD8B1;
+  background-color: #E2C290;
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -145,6 +144,7 @@ p {
   font-weight: bold;
   margin: 0px;
   padding: 5px;
+  color: #112A46;
 }
 
 .logo {
@@ -165,7 +165,7 @@ p {
 }
 
 .score {
-  text-align: left;
+  text-align: right;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
