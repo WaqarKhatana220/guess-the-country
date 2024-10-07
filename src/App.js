@@ -30,14 +30,15 @@ function App() {
     if (currentCountry < countries.length - 1) {
       setCurrentCountry(currentCountry + 1);
       resetCountryState(); // Reset clues and answer reveal
-    } 
+    } else {
+    }
   };
 
   const previousCountry = () => {
     if (currentCountry > 0) {
       setCurrentCountry(currentCountry - 1);
+      resetCountryState();
     } 
-    resetCountryState();
   };
 
   const resetCountryState = () => {
@@ -67,7 +68,7 @@ function App() {
           ))}
         </div>
         <div className={`answer-box ${answerRevealed ? 'revealed' : ''}`}>
-          {answerRevealed && countries[currentCountry].name}
+          {answerRevealed ? countries[currentCountry].name : '?'}
         </div>
       </div>
 
@@ -81,10 +82,7 @@ function App() {
         placeholder='...'
       />
 
-      <div className='countryToggle'>
-        <button onClick={previousCountry}>Previous</button>
-        <button onClick={nextCountry}>Next</button>
-      </div>
+        <button onClick={nextCountry} disabled={!(answerRevealed && currentCountry < countries.length - 1)}>Next</button>
       
     </div>
   );

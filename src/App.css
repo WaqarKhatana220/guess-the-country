@@ -121,7 +121,7 @@ input::placeholder {
 
 
 button {
-  padding: 12px 20px; /* Increase padding for better aesthetics */
+  padding: 12px 30px; /* Increase padding for better aesthetics */
   background-color: #EAD8B1; /* Soft background color */
   color: black; /* Text color */
   border: none; /* Remove border */
@@ -131,7 +131,7 @@ button {
   font-size: 1em; /* Font size for readability */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 40%;
+  /* width: 40%; */
   align-items: center;
   text-align: center;
 }
@@ -146,6 +146,12 @@ button:hover {
 button:active {
   transform: translateY(1px); /* Press down effect */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
+}
+
+button:disabled {
+  background-color: #EAD8B1;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 
