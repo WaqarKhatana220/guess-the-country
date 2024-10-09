@@ -1,4 +1,3 @@
-/* App.css */
 html {
   background-color: #6A9AB0;
   height: 100vh;
@@ -14,18 +13,15 @@ body {
   background-color: green;
 }
 
-
-
-
 .container {
-  position: relative; /* Ensure container is positioned relative for absolute children */
+  position: relative;
   text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1; /* Make sure content is above the map */
+  z-index: 1;
 }
 
 .clues-container {
@@ -34,40 +30,39 @@ body {
   align-items: center;
   margin-bottom: 20px;
   width: 50%;
+
 }
 
 .clues {
   display: flex;
-  flex-direction: column; /* Stack boxes vertically */
+  flex-direction: column;
   justify-content: center;
-  width: 40%; /* Give the clues section half the container width */
+  width: 40%;
 }
 
 .clue-box {
   width: 100%;
   height: 20px;
-  margin: 10px 0; /* Add vertical margin between boxes */
-  background-color: #8FAAAE; /* Default to green for unrevealed clues */
+  margin: 10px 0;
+  background-color: #8FAAAE;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  padding: 30px 10px;
+  padding: 25px 10px;
   border-radius: 5px;
   opacity: 0.7;
 }
 
 .clue-box.revealed {
-  background-color: #2D515C; /* Turn dark for revealed clues */
-  color: white; /* Ensure text remains visible */
+  background-color: #2D515C;
+  color: white;
 }
-
-
 
 .answer-box {
   width: 40%;
-  height: 20px; /* Ensure it matches the height of the clue section */
+  height: 20px;
   margin-left: 30px;
   background-color: #557A6E;
   color: white;
@@ -76,68 +71,72 @@ body {
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
-  padding: 20px 5px;
+  padding: 25px 5px;
   transition: background-color 0.3s ease;
   border-radius: 5px;
   opacity: 0.7;
 }
 
-
-
 input {
-  padding: 10px 15px; /* Adjust padding for better aesthetics */
+  padding: 10px 15px;
   border-radius: 8px;
-  border: 2px solid #384B70; /* Slightly darker border for contrast */
-  margin-right: 10px;
-  background-color: #E9EFEC; /* Match the background color of the main container */
+  border: 2px solid #384B70;
+  background-color: #E9EFEC;
   width: 20%;
-  height: 40px; /* Increase height for better usability */
-  color: #112A46; /* Ensure text is white for better visibility */
-  font-size: 1em; /* Adjust font size for readability */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  height: 40px;
+  color: #112A46;
+  font-size: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   opacity: 0.7;
 }
 
 input:focus {
-  outline: none; /* Remove default outline */
+  outline: none;
   border-color: #384B70; 
-  background-color: #E9EFEC; /* Darken background on focus */
-  box-shadow: 0 0 10px rgba(222, 78, 44, 0.5); /* Add glow effect on focus */
+  background-color: #E9EFEC;
+  box-shadow: 0 0 10px rgba(222, 78, 44, 0.5);
+  opacity: 1;
+}
+
+input:disabled {
+  background-color: #f0f0f0;
+  border-color: #c0c0c0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  box-shadow: none;
   opacity: 1;
 }
 
 input::placeholder {
-  color: #d9d9d9; /* Placeholder color */
-  opacity: 0.8; /* Slightly transparent for better visual blend */
+  color: #d9d9d9;
+  opacity: 0.8;
 }
 
 button {
-  padding: 12px 30px; /* Increase padding for better aesthetics */
-  background-color: #E2C290; /* Soft background color */
-  color: black; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  margin-top: 10px; /* Margin above the button */
-  font-size: 1em; /* Font size for readability */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 12px 30px;
+  background-color: #E2C290;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   align-items: center;
   text-align: center;
   opacity: 1;
 }
 
-/* Hover effects */
 button:hover {
-  background-color: #d1b487; /* Darken background on hover */
-  transform: translateY(-2px); /* Slightly lift the button on hover */
+  background-color: #d1b487;
+  transform: translateY(-2px);
 }
 
-/* Active state effect */
 button:active {
-  transform: translateY(1px); /* Press down effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:disabled {
@@ -146,18 +145,10 @@ button:disabled {
   opacity: 0.5;
 }
 
-p {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0px;
-  padding: 5px;
-  color: #112A46;
-}
-
 .logo {
-  position: absolute; /* Position the logo absolutely */
-  top: 0px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
+  position: absolute;
+  top: 0px;
+  right: 20px;
   width: 200px; 
   height: auto; 
 }
@@ -176,4 +167,56 @@ p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 5px;
+  color: #112A46;
+}
+
+.value {
+  margin-left: 5px;
+}
+
+@media (max-width: 1080px) {
+  .logo {
+    width: 120px;
+    top: -15px;
+    right: 5px;
+  }
+
+  .clues-container {
+    flex-direction: column;
+    width: 80%;
+
+  }
+
+  .clues {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .clue-box {
+    width: auto;
+    margin: 2px;
+  }
+
+  .answer-box {
+    width: 100%;
+    margin-left: 0;
+    padding: 25px 5px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  input {
+    width: 50%;
+    height: 30px;
+  }
 }

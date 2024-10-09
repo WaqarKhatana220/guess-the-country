@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import countries from './countries'; // Ensure your countries data includes latitude and longitude
+import countries from './countries';
 import logo from './logo.png';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -15,8 +15,8 @@ function App() {
   const [totalGuesses, setTotalGuesses] = useState(0);
   const [answerRevealed, setAnswerRevealed] = useState(false);
   const [shuffledCountries, setShuffledCountries] = useState([]);
+  const [toggleInput, setToggleInput] = useState(false);
 
-  // Fisher-Yates shuffle algorithm
   const shuffleArray = (array) => {
     let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -27,13 +27,16 @@ function App() {
   };
 
   useEffect(() => {
-    // Shuffle countries on load
     const shuffled = shuffleArray(countries);
     setShuffledCountries(shuffled);
   }, []);
 
   const handleGuess = () => {
+    if (userGuess === '' || userGuess.length===0) {
+      return;
+    }
     if (userGuess.toLowerCase() === shuffledCountries[currentCountry].name.toLowerCase()) {
+      setToggleInput(!toggleInput)
       setCorrectGuesses(correctGuesses + 1);
       setStreak(streak + 1);
       setTotalGuesses(totalGuesses + 1);
@@ -43,6 +46,7 @@ function App() {
         setRevealedClues([...revealedClues, revealedClues.length]);
         setTries(tries + 1);
       } else {
+        setToggleInput(!toggleInput)
         setAnswerRevealed(true);
         setStreak(0);
         setTotalGuesses(totalGuesses + 1);
@@ -54,14 +58,15 @@ function App() {
   const nextCountry = () => {
     if (currentCountry < shuffledCountries.length - 1) {
       setCurrentCountry(currentCountry + 1);
-      resetCountryState(); // Reset clues and answer reveal
+      resetCountryState();
     }
   };
 
   const resetCountryState = () => {
     setRevealedClues([0]);
     setTries(0);
-    setAnswerRevealed(false); // Reset answer reveal for the next/previous country
+    setAnswerRevealed(false);
+    setToggleInput(!toggleInput)
   };
 
   const handleKeyPress = (e) => {
@@ -90,9 +95,16 @@ function App() {
       </div>
 
       <div className='score'>
-        <p>Guess Accuracy: {correctGuesses}/{totalGuesses}</p>
-        <p>Current Streak: {streak}</p>
+        <div className='score-item'>
+          <span className='label'>Accuracy:</span>
+          <span className='value'>{correctGuesses}/{totalGuesses}</span>
+        </div>
+        <div className='score-item'>
+          <span className='label'>Streak:</span>
+          <span className='value'>{streak}</span>
+        </div>
       </div>
+
 
       <input
         type="text"
@@ -100,16 +112,13 @@ function App() {
         onChange={(e) => setUserGuess(e.target.value)}
         onKeyDown={handleKeyPress}
         placeholder='. . .'
+        disabled={toggleInput}
       />
 
       <button onClick={nextCountry} disabled={!(answerRevealed && currentCountry < shuffledCountries.length - 1)}>Next</button>
 
-      {/* Leaflet Map as Background */}
       <MapContainer center={[30.3753, 69.3451]} zoom={3} className='leaflet-container' style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
-        {/* <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        /> */}
+
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://carto.com/">CartoDB</a> contributors'

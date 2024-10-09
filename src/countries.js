@@ -394,7 +394,7 @@ const countries = [
         clues: [
             "Home to the Alhambra, a stunning Moorish palace and fortress in Granada.",
             "It is the world's largest producer of olive oil.",
-            "Spain has a significant architectural heritage, including works by Antoni Gaudí, such as the Sagrada Família.",
+            "The country has a significant architectural heritage, including works by Antoni Gaudí, such as the Sagrada Família.",
             "Famous for its vibrant festivals, including La Tomatina and Running of the Bulls.",
             "The country has a rich artistic heritage, being the birthplace of painters like Picasso and Dalí."
         ]
