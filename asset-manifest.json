@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/guess-the-country/static/css/main.4cfc289e.css",
+    "main.js": "/guess-the-country/static/js/main.47fef76a.js",
+    "static/js/453.945356ef.chunk.js": "/guess-the-country/static/js/453.945356ef.chunk.js",
+    "static/media/logo.png": "/guess-the-country/static/media/logo.a1ca94c6f61d31cb214b.png",
+    "index.html": "/guess-the-country/index.html",
+    "main.4cfc289e.css.map": "/guess-the-country/static/css/main.4cfc289e.css.map",
+    "main.47fef76a.js.map": "/guess-the-country/static/js/main.47fef76a.js.map",
+    "453.945356ef.chunk.js.map": "/guess-the-country/static/js/453.945356ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cfc289e.css",
+    "static/js/main.47fef76a.js"
+  ]
+}
